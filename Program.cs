@@ -30,22 +30,49 @@ namespace Homework_6
 
             #endregion
 
-            #region
+            #region Проверка на палиндромом
 
             //Задайте произвольную строку.Выясните, является ли она палиндромом.
 
-            string testWord = "А роза упала на лапу Азора";
+            //string testWord = "А роза упала на лапу Азора";
 
-            string answer = isPalindrome(testWord) ? "Да" : "Нет";
+            //string answer = isPalindrome(testWord) ? "Да" : "Нет";
 
-            Console.WriteLine(answer);
+            //Console.WriteLine(answer);
 
             #endregion
 
+            #region Реверс строки с сохранением пробелов
 
+            //Задайте строку, состоящую из слов, разделенных пробелами.
+            //Сформировать строку, в которой слова расположены в обратном порядке.
+            //В полученной строке слова должны быть также разделены пробелами.
+
+            string testText = "Эта строка будет перевернута";
+
+            string result = StringRevers(testText);
+
+            Console.WriteLine(result);
+
+            #endregion
 
             Console.ReadKey();
         }
+
+        private static string StringRevers(string testText)
+        {
+            testText = testText.ToLower();
+
+            string[] words = testText.Split(' ');
+
+            Array.Reverse(words);
+
+            words[0] = words[0].Substring(0, 1).ToUpper() + words[0].Substring(1, words[0].Length - 1);
+
+            return string.Join(" ", words);
+        }
+
+
 
         private static bool isPalindrome(string testWord)
         {
