@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Homework_6
 {
@@ -52,7 +50,7 @@ namespace Homework_6
 
             string result = StringRevers(testText);
 
-            Console.WriteLine(result);
+            Console.Write(result);
 
             #endregion
 
